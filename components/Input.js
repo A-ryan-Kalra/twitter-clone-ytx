@@ -7,13 +7,36 @@ import { CalendarIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import React, { useRef, useState } from "react";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
+import { db, storage } from "../firebase";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 function Input() {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const filePickerRef = useRef(null);
   const [showEmojis, setShowEmojis] = useState(false);
+  const [loading, setLoading] = useState(false);
   const addImageToPost = () => {};
+  const addEmoji = (e) => {
+    // let sym = e.unified.split(" ");
+    // let codeArray = [];
+    // sym.forEach((el) => codeArray.push("0x" + el));
+    // console.log(codeArray);
+    // let emoji = String.fromCodePoint(codeArray);
+    // console.log(emoji);
+    setInput(input + e.native);
+  };
+  const sendPost = () => {
+    if (loading) return;
+    setLoading(true);
+  };
   return (
     <div>
       <div
@@ -25,7 +48,9 @@ function Input() {
           alt=""
         />
         <div className="w-full divide-y divide-gray-700">
-          <div className={``}>
+          <div
+            className={`${selectedFile && "pb-7"} ${input && " space-y-2.5"}`}
+          >
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -77,11 +102,19 @@ function Input() {
                   <Picker
                     data={data}
                     emojiButtonSize={32}
-                    onEmojiSelect={console.log}
+                    onEmojiSelect={(e) => addEmoji(e)}
                   />
                 </div>
               )}
             </div>
+            <button
+              className="bg-[#1d9bf0] text-white rounded-full hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0]
+            disabled:opacity-50 disabled:cursor-default px-4 py-1.5 shadow-md font-bold"
+              disabled={!input.trim() && !selectedFile}
+              onClick={sendPost}
+            >
+              Tweet
+            </button>
           </div>
         </div>
       </div>
