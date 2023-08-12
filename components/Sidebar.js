@@ -47,7 +47,7 @@ function Sidebar() {
           <h4>firebase 1999</h4>
           <p className="text-[#6e767d]">@firebase1999</p>
         </div>
-        <EllipsisHorizontalIcon className="h-5 hidden xl:inline ml-10" />
+        <EllipsisHorizontalIcon className="h-5 hidden xl:inline  ml-10" />
       </div>
     </div>
   );
