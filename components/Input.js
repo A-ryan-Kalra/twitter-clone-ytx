@@ -20,6 +20,7 @@ import {
 } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
+import { useSession } from "next-auth/react";
 
 function Input() {
   const [input, setInput] = useState("");
@@ -53,10 +54,10 @@ function Input() {
     if (loading) return;
     setLoading(true);
     const docRef = await addDoc(collection(db, "posts"), {
-      // id:session.user.id,
-      // username:session.user.name,
-      // userImg:session.user.image,
-      // tag:session.user.tag,
+      id: session.user.uid,
+      username: session.user.name,
+      userImg: session.user.image,
+      tag: session.user.tag,
       text: input,
       timestamp: serverTimestamp(),
     });
@@ -75,6 +76,8 @@ function Input() {
     setShowEmojis(null);
     setSelectedFile(null);
   };
+  const { data: session, status } = useSession();
+
   return (
     <div>
       <div
@@ -83,7 +86,7 @@ function Input() {
         }`}
       >
         <img
-          src="https://chat.openai.com/apple-touch-icon.png"
+          src={session.user.image}
           className="h-11 w-11 rounded-full cursor-pointer"
           alt=""
         />
@@ -142,7 +145,7 @@ function Input() {
                   <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
                 </div>
                 {showEmojis && (
-                  <div className="absolute top-44">
+                  <div className={`absolute top-44  `}>
                     <Picker
                       data={data}
                       emojiButtonSize={32}

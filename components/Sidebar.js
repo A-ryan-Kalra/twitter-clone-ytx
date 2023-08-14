@@ -12,7 +12,10 @@ import {
   EllipsisHorizontalCircleIcon,
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/outline";
+import { signOut, useSession } from "next-auth/react";
 function Sidebar() {
+  const { data: session, status } = useSession();
+
   return (
     <div className=" hidden sm:flex flex-col items-center xl:items-start  xl:w-[340px]   p-2 fixed h-full  ">
       <div
@@ -37,15 +40,18 @@ function Sidebar() {
       >
         Tweet
       </button>
-      <div className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:ml-auto xl:-mr-2.5 mt-auto">
+      <div
+        className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:ml-auto xl:-mr-2.5 mt-auto"
+        onClick={signOut}
+      >
         <img
-          src="https://chat.openai.com/apple-touch-icon.png"
+          src={session.user.image}
           className="h-10 w-10 rounded-full xl:mr-2.5"
           alt=""
         />
         <div className="hidden xl:inline leading-5">
-          <h4>firebase 1999</h4>
-          <p className="text-[#6e767d]">@firebase1999</p>
+          <h4>{session.user.name}</h4>
+          <p className="text-[#6e767d]">{session.user.tag}</p>
         </div>
         <EllipsisHorizontalIcon className="h-5 hidden xl:inline  ml-10" />
       </div>
