@@ -12,8 +12,8 @@ import { data } from "autoprefixer";
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session, status } = useSession();
 
-  console.log(status);
-  console.log(session);
+  // console.log(status);
+  // console.log(session);
   if (!session) return <Login providers={providers} />;
   // console.log(providers);
   return (

@@ -33,7 +33,7 @@ function Feed() {
       <Input />
       <div className="pb-72">
         {post.map((post, index) => (
-          <Post key={index} index={post.id} post={post.data()} />
+          <Post key={index} id={post.id} post={post.data()} />
         ))}
       </div>
     </div>
