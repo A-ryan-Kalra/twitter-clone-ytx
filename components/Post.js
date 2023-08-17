@@ -13,7 +13,15 @@ import {
   HeartIcon,
   TrashIcon,
 } from "@heroicons/react/24/outline";
-import { deleteDoc, doc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+  setDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import Image from "next/image";
 
@@ -26,6 +34,34 @@ function Post({ id, post, postPage }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState([]);
 
+  // console.log(likes.map((id) => id.data()));
+  useEffect(
+    () =>
+      onSnapshot(
+        query(
+          collection(db, "posts", id, "comments"),
+          orderBy("timestamp", "desc")
+        ),
+        (snapshot) => {
+          setComments(snapshot.docs);
+        }
+      ),
+    [db, id]
+  );
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "posts", id, "likes"), (snapshot) =>
+        setLikes(snapshot.docs)
+      ),
+    [db, id]
+  );
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "posts", id, "likes"), (snapshot) =>
+        setLikes(snapshot.docs)
+      ),
+    [db, id]
+  );
   useEffect(
     () =>
       setLiked(
@@ -79,7 +115,7 @@ function Post({ id, post, postPage }) {
                 @{post?.tag}
               </span>
             </div>{" "}
-            .{" "}
+            ·{" "}
             <span className="hover:underline text-sm sm:text-[15px]">
               <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
             </span>
@@ -114,6 +150,7 @@ function Post({ id, post, postPage }) {
               e.stopPropagation();
               setPostId(id);
               setIsOpen(true);
+              document.body.style.overflow = "hidden";
             }}
           >
             <div className="icon group-hover:bg-[#1d9bf0] group-hover:bg-opacity-10">

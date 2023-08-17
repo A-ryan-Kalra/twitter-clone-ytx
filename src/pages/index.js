@@ -8,10 +8,13 @@ import { authOptions } from "../pages/api/auth/[...nextauth]";
 import { getProviders, getSession, useSession } from "next-auth/react";
 import Login from "../../components/Login";
 import { data } from "autoprefixer";
+import Modal from "../../components/Modal";
+import { useRecoilState } from "recoil";
+import { modalState, postIdState } from "../../atoms/modalAtom";
 
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session, status } = useSession();
-
+  const [isOpen, setIsOpen] = useRecoilState(modalState);
   // console.log(status);
   // console.log(session);
   if (!session) return <Login providers={providers} />;
@@ -24,6 +27,7 @@ export default function Home({ trendingResults, followResults, providers }) {
       <main className="bg-black flex max-w-[1536px]   mx-auto min-h-screen">
         <Sidebar />
         <Feed />
+        {isOpen && <Modal />}
       </main>
     </div>
   );

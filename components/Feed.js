@@ -7,7 +7,7 @@ import Post from "./Post";
 
 function Feed() {
   const [post, setPost] = useState([]);
-  // console.log(post[0].data());
+  // console.log(post.map((id) => id.data()));
   useEffect(
     () =>
       onSnapshot(
