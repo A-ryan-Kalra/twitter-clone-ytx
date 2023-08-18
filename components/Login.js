@@ -12,7 +12,7 @@ function Login({ providers }) {
         objectFit="contain"
       />
       <div>
-        {Object.values(providers).map((provider, index) => (
+        {Object.values(providers)?.map((provider, index) => (
           <div key={index}>
             <button
               class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group"

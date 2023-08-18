@@ -35,7 +35,7 @@ function Feed() {
       </div>
       <Input />
       <div className="pb-72">
-        {post.map((post, index) => (
+        {post?.map((post, index) => (
           <Post key={index} id={post.id} post={post.data()} />
         ))}
       </div>

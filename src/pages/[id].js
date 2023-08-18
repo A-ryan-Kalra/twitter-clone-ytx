@@ -75,7 +75,7 @@ function PostPage({ trendingResults, followResults, providers }) {
           <Post id={id} post={post} postPage />
           {comments.length > 0 && (
             <div className="pb-72 text-white ">
-              {comments.map((comment, index) => (
+              {comments?.map((comment, index) => (
                 <Comment key={index} id={comment.id} comment={comment.data()} />
               ))}
             </div>

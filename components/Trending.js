@@ -13,7 +13,7 @@ function Trending({ result }) {
         </h6>
         <p className="text-[#6e767d] text-sm font-medium max-w-[250px]">
           Trending with{" "}
-          {result.tags.map((tag, index) => (
+          {result.tags?.map((tag, index) => (
             <span key={index} className="tag">
               {tag}
             </span>
