@@ -13,14 +13,16 @@ import {
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/outline";
 import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 function Sidebar() {
   const { data: session, status } = useSession();
-
+  const router = useRouter();
   return (
-    <div className=" hidden sm:flex flex-col items-center xl:items-start  xl:w-[340px]   p-2 fixed h-full  ">
+    <div className=" hidden sm:flex  flex-col items-center xl:items-start  xl:w-[340px]   p-2 fixed h-full  ">
       <div
         className="flex items-center justify-center  w-14 h-14 hoverAnimation
         p-0 xl:ml-24 "
+        onClick={() => router.push("/")}
       >
         <Image src="https://rb.gy/ogau5a" width={30} className="" height={30} />
       </div>
@@ -45,13 +47,13 @@ function Sidebar() {
         onClick={signOut}
       >
         <img
-          src={session.user.image}
+          src={session?.user?.image}
           className="h-10 w-10 rounded-full xl:mr-2.5"
           alt=""
         />
         <div className="hidden xl:inline leading-5">
-          <h4>{session.user.name}</h4>
-          <p className="text-[#6e767d]">{session.user.tag}</p>
+          <h4>{session?.user?.name}</h4>
+          <p className="text-[#6e767d]">{session?.user?.tag}</p>
         </div>
         <EllipsisHorizontalIcon className="h-5 hidden xl:inline  ml-10" />
       </div>

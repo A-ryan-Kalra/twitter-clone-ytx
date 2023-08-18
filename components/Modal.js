@@ -39,6 +39,7 @@ function Modal() {
     });
     setIsOpen(false);
     setComment("");
+    document.body.style.overflow = "auto";
     router.push(`/${postId}`);
   };
 

@@ -11,6 +11,7 @@ import { data } from "autoprefixer";
 import Modal from "../../components/Modal";
 import { useRecoilState } from "recoil";
 import { modalState, postIdState } from "../../atoms/modalAtom";
+import Widgets from "../../components/Widgets";
 
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session, status } = useSession();
@@ -27,6 +28,10 @@ export default function Home({ trendingResults, followResults, providers }) {
       <main className="bg-black flex max-w-[1536px]   mx-auto min-h-screen">
         <Sidebar />
         <Feed />
+        <Widgets
+          trendingResults={trendingResults}
+          followResults={followResults}
+        />
         {isOpen && <Modal />}
       </main>
     </div>
