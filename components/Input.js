@@ -40,14 +40,14 @@ function Input() {
       setSelectedFile(readerEvent.target.result);
     };
   };
-  const addEmoji = (e) => {
+  const addEmoji = async (e) => {
     // let sym = e.unified.split(" ");
     // let codeArray = [];
     // sym.forEach((el) => codeArray.push("0x" + el));
     // console.log(codeArray);
     // let emoji = String.fromCodePoint(codeArray);
     // console.log(emoji);
-    setInput(input + e.native);
+    setInput(input + (await e.native));
   };
 
   const sendPost = async () => {
