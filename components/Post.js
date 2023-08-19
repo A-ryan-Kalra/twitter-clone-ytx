@@ -24,7 +24,6 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import Image from "next/image";
-import { postState } from "../atoms/modalAtom";
 
 function Post({ id, post, postPage }) {
   const { data: session } = useSession();

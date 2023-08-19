@@ -9,8 +9,7 @@ import {
   XCircleIcon,
 } from "@heroicons/react/24/solid";
 import React, { useRef, useState } from "react";
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
+
 import {
   addDoc,
   collection,
@@ -21,6 +20,9 @@ import {
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { useSession } from "next-auth/react";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
+// import dynamic from "next/dynamic";
 
 function Input() {
   const [input, setInput] = useState("");
@@ -34,9 +36,8 @@ function Input() {
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
-    // console.log(e.target.files[0] + " e.target.files[0]");
+
     reader.onload = (readerEvent) => {
-      // console.log(readerEvent.target.result + " readerEvent.target.result");
       setSelectedFile(readerEvent.target.result);
     };
   };

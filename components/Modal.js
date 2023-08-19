@@ -43,7 +43,7 @@ function Modal() {
     router.push(`/${postId}`);
   };
 
-  console.log(postId);
+  // console.log(postId);
   useEffect(
     () =>
       onSnapshot(doc(db, "posts", postId), (snapshot) => {
@@ -61,7 +61,7 @@ function Modal() {
       }}
     >
       <div
-        className="inline-block align-bottom rounded-2xl text-left overflow-hidden transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full bg-black  absolute left-[50%] top-[10%] translate-x-[-50%] "
+        className="inline-block align-bottom rounded-2xl text-left overflow-hidden transition-all sm:my-8 sm:align-middle min-w-[380px]  sm:max-w-xl sm:w-full bg-black  absolute left-[50%] top-[10%] translate-x-[-50%] "
         onClick={(e) => {
           e.stopPropagation();
         }}
@@ -69,7 +69,10 @@ function Modal() {
         <div className="flex items-center px-1.5 py-2 border-b border-gray-700 ">
           <div
             className="hoverAnimation  w-9 h-9 flex items-center justify-center xl:px-0"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false);
+              document.body.style.overflow = "auto";
+            }}
           >
             <XMarkIcon className="h-[22px] text-white" />
           </div>
