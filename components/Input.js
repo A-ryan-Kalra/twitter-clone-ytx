@@ -48,6 +48,7 @@ function Input() {
     // console.log(codeArray);
     // let emoji = String.fromCodePoint(codeArray);
     // console.log(emoji);
+
     setInput(input + e.native);
   };
 
@@ -150,7 +151,7 @@ function Input() {
                     <Picker
                       data={data}
                       emojiButtonSize={32}
-                      onEmojiSelect={(e) => setInput(input + e.native)}
+                      onEmojiSelect={console.log}
                     />
                   </div>
                 )}
