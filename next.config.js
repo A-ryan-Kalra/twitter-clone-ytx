@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  swcMinify: false,
-};
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -16,6 +12,10 @@ const nextConfig = {
     ],
     minimumCacheTTL: 1500000,
   },
+};
+
+module.exports = {
+  swcMinify: false,
 };
 
 module.exports = nextConfig;
