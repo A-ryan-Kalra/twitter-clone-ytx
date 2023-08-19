@@ -147,10 +147,10 @@ function Input() {
                   <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
                 </div>
                 {showEmojis && (
-                  <div className={`absolute top-[176px]  `}>
+                  <div className={`absolute top-[176px]`}>
                     <Picker
                       data={data}
-                      emojiButtonSize={32}
+                      // emojiButtonSize={32}
                       onEmojiSelect={(e) => {
                         addEmoji(e);
                       }}
