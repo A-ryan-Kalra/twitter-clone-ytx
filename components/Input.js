@@ -149,7 +149,7 @@ function Input() {
                     <Picker
                       data={data}
                       emojiButtonSize={32}
-                      onEmojiSelect={addEmoji}
+                      onEmojiSelect={(e) => setInput(input + e.native)}
                     />
                   </div>
                 )}
