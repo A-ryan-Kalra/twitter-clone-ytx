@@ -9,8 +9,9 @@ import {
   XCircleIcon,
 } from "@heroicons/react/24/solid";
 import React, { useRef, useState } from "react";
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
+// import data from "@emoji-mart/data";
+// import Picker from "@emoji-mart/react";
+import Picker from "emoji-picker-react";
 import {
   addDoc,
   collection,
@@ -47,7 +48,7 @@ function Input() {
     // console.log(codeArray);
     // let emoji = String.fromCodePoint(codeArray);
     // console.log(emoji);
-    setInput(input + e.native);
+    setInput(input + e.emoji);
   };
 
   const sendPost = async () => {
@@ -147,9 +148,10 @@ function Input() {
                 {showEmojis && (
                   <div className={`absolute top-44  `}>
                     <Picker
-                      data={data}
-                      emojiButtonSize={32}
-                      onEmojiSelect={(e) => addEmoji(e)}
+                      onEmojiClick={(e) => addEmoji(e)}
+                      // data={data}
+                      // emojiButtonSize={32}
+                      // onEmojiSelect={(e) => addEmoji(e)}
                     />
                   </div>
                 )}
