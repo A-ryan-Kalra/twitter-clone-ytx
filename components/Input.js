@@ -41,11 +41,11 @@ function Input() {
     };
   };
   const addEmoji = (e) => {
-    let sym = e.unified.split(" ");
-    let codeArray = [];
-    sym.forEach((el) => codeArray.push("0x" + el));
-    console.log(codeArray);
-    let emoji = String.fromCodePoint(codeArray);
+    // let sym = e.unified.split(" ");
+    // let codeArray = [];
+    // sym.forEach((el) => codeArray.push("0x" + el));
+    // console.log(codeArray);
+    // let emoji = String.fromCodePoint(codeArray);
     // console.log(emoji);
     setInput(input + e.native);
   };
@@ -149,7 +149,7 @@ function Input() {
                     <Picker
                       data={data}
                       emojiButtonSize={32}
-                      onEmojiSelect={(e) => addEmoji(e)}
+                      onEmojiSelect={addEmoji}
                     />
                   </div>
                 )}
