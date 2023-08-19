@@ -13,5 +13,8 @@ const nextConfig = {
     minimumCacheTTL: 1500000,
   },
 };
+module.exports = {
+  swcMinify: false,
+};
 
 module.exports = nextConfig;
