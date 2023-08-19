@@ -14,8 +14,8 @@ const nextConfig = {
   },
 };
 
-module.exports = {
-  swcMinify: false,
-};
-
 module.exports = nextConfig;
+
+// module.exports = {
+//   swcMinify: false,
+// };
