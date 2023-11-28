@@ -21,7 +21,7 @@ Twitter clone built in Next.js + Javascript + Tailwind CSS using Cloud Firestore
 <li>Users can add tweets, like, and reply</li>
 <li>Users can delete tweets</li>
 <li>Users can see all users and the trending list</li>
-<li>Realtime update likes, comments,tweets and user profile</li>
+<li>Realtime update likes, comments, tweets and user profile</li>
 <li>All images uploads are stored on Firebase Cloud Storage</li>
 </ul>
 
