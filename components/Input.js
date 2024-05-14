@@ -40,15 +40,7 @@ function Input() {
       console.log("newOne merge1");
     }
     if (e.target.files[0]) {
-      console.log("newOne merge12");
-    }
-    if (e.target.files[0]) {
-      console.log("main merge1");
-    }
-    if (e.target.files[0]) {
-      console.log("main merge12");
-
-      console.log("newOne merge13");
+      console.log("newOne merge14");
     }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
