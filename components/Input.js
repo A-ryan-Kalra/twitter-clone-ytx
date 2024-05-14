@@ -35,7 +35,6 @@ function Input() {
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
-
     if (e.target.files[0]) {
       console.log("okay merge71");
     }
@@ -44,7 +43,7 @@ function Input() {
       console.log("okay merge18");
     }
     if (e.target.files[0]) {
-      console.log("okay merge18");
+      console.log("main merge12");
     }
     if (e.target.files[0]) {
       console.log("main merge12");
