@@ -47,13 +47,6 @@ function Input() {
       console.log("okay merge18");
     }
 
-    if (e.target.files[0]) {
-      console.log("main merge11");
-    }
-    if (e.target.files[0]) {
-      console.log("main merge12");
-    }
-
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
       // console.log(readerEvent.target.result + " readerEvent.target.result");
