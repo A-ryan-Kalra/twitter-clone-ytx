@@ -40,13 +40,7 @@ function Input() {
       console.log("okay merge1");
     }
     if (e.target.files[0]) {
-      console.log("okay merge12");
-    }
-    if (e.target.files[0]) {
-      console.log("okay merge13");
-    }
-    if (e.target.files[0]) {
-      console.log("okay merge14");
+      console.log("okay merge15");
     }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
