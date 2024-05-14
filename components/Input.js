@@ -42,6 +42,9 @@ function Input() {
     if (e.target.files[0]) {
       console.log("okay merge12");
     }
+    if (e.target.files[0]) {
+      console.log("okay merge13");
+    }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
