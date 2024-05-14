@@ -44,6 +44,8 @@ function Input() {
     }
     if (e.target.files[0]) {
       console.log("newOne merge15");
+
+      console.log("switch-main merge1");
     }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
