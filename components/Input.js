@@ -39,6 +39,9 @@ function Input() {
     if (e.target.files[0]) {
       console.log("newOne merge1");
     }
+    if (e.target.files[0]) {
+      console.log("newOne merge12");
+    }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
