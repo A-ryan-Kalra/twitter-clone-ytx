@@ -47,6 +47,9 @@ function Input() {
 
       console.log("switch-main merge1");
     }
+    if (e.target.files[0]) {
+      console.log("switch-main merge12");
+    }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
