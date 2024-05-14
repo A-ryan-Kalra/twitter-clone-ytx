@@ -35,19 +35,6 @@ function Input() {
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
-    if (e.target.files[0]) {
-      console.log("okay merge71");
-    }
-
-    if (e.target.files[0]) {
-      console.log("okay merge18");
-    }
-    if (e.target.files[0]) {
-      console.log("main merge12");
-    }
-    if (e.target.files[0]) {
-      console.log("main merge12");
-    }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
@@ -92,12 +79,7 @@ function Input() {
     setSelectedFile(null);
   };
   const { data: session, status } = useSession();
-  if (true) {
-    console.log("wow");
-  }
-  if (true) {
-    console.log("wow");
-  }
+
   return (
     <div>
       <div
