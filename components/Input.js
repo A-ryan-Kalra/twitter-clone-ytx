@@ -37,14 +37,7 @@ function Input() {
     }
 
     if (e.target.files[0]) {
-      console.log("okay merge7");
-    }
-
-    if (e.target.files[0]) {
-      console.log("okay merge16");
-    }
-    if (e.target.files[0]) {
-      console.log("okay merge18");
+      console.log("main merge11");
     }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
