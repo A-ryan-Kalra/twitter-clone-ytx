@@ -40,6 +40,7 @@ function Input() {
       console.log("newOne merge1");
     }
     if (e.target.files[0]) {
+ 
       console.log("newOne merge14");
     }
     if (e.target.files[0]) {
@@ -48,6 +49,11 @@ function Input() {
       console.log("switch-main merge1");
     }
     if (e.target.files[0]) {
+ 
+      console.log("switch-main merge1");
+    }
+    if (e.target.files[0]) {
+>>>>>>> 19785a968f67e1503d52ce7d75cf8c79f0caebc2
       console.log("switch-main merge12");
     }
 
