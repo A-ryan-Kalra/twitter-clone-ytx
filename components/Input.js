@@ -90,7 +90,12 @@ function Input() {
     setSelectedFile(null);
   };
   const { data: session, status } = useSession();
-
+  if (true) {
+    console.log("wow");
+  }
+  if (true) {
+    console.log("wow");
+  }
   return (
     <div>
       <div
