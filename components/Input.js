@@ -43,14 +43,7 @@ function Input() {
       console.log("newOne merge12");
     }
     if (e.target.files[0]) {
-      reader.readAsDataURL(e.target.files[0]);
-    }
-    if (e.target.files[0]) {
-      reader.readAsDataURL(e.target.files[0]);
-    }
-
-    if (e.target.files[0]) {
-      reader.readAsDataURL(e.target.files[0]);
+      console.log("main merge1");
     }
 
     // console.log(e.target.files[0] + " e.target.files[0]");
