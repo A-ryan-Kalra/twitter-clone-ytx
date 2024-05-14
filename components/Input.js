@@ -35,6 +35,10 @@ function Input() {
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
+    if (e.target.files[0]) {
+      console.log("main merge11");
+    }
+
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
       // console.log(readerEvent.target.result + " readerEvent.target.result");
