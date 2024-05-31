@@ -35,6 +35,7 @@ function Input() {
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);
     }
+    console.log("this is master branch along with new tag v1.0");
 
     // console.log(e.target.files[0] + " e.target.files[0]");
     reader.onload = (readerEvent) => {
